@@ -15,105 +15,19 @@
 <meta name="Description" content="" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="static/public/css/frontCss/style_1.css" rel="stylesheet"
+<link href="static/public/css/frontCss/style.css" rel="stylesheet"
 	type="text/css" />
 <script type="text/javascript" src="static/public/js/frontJs/common.js"></script>
 <script type="text/javascript" src="static/public/js/frontJs/global.js"></script>
 <script type="text/javascript" src="static/public/js/frontJs/compare.js"></script>
 </head>
 <body>
-	<meta property="qc:admins" content="510003565761411676375" />
-	<script type="text/javascript">
-		var process_request = "正在处理您的请求...";
-	</script>
-	<script type="text/javascript">
-		//收藏本站 bbs.ecmoban.com
-		function AddFavorite(title, url) {
-			try {
-				window.external.addFavorite(url, title);
-			} catch (e) {
-				try {
-					window.sidebar.addPanel(title, url, "");
-				} catch (e) {
-					alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
-				}
-			}
-		}
-	</script>
-	<!--
-<div style="width:100%; height:30spx; line-height:30px; background:#fefeee; text-align:center; font-size:16px;">
-	<a style="color:#F00; text-align:center; " href="http://bbs.phonegap100.com/thread-296-1-1.html" target="_blank">【点击下载】Html5+PhoneGap跨平台移动APP开发教程</a>
-</div>
---->
-	<div id="toolbar">
-		<div class="heaTop w">
-			<div class="f_l">
-				<a href="index.php" class="shouye">返回首页</a> <a
-					href="javascript:void(0);"
-					onclick="AddFavorite('我的网站',location.href)" class="heaTopFav">收藏本站</a>
-				<script type="text/javascript"
-					src="static/public/js/frontJs/transport.js"></script>
-				<script type="text/javascript"
-					src="static/public/js/frontJs/utils.js"></script>
-				<span class="heaHalving"> <a href="flow.php">查看购物车</a>
-
-
-				</span>
-			</div>
-
-			<div class="f_r">
-
-
-
-				<font id="ECS_MEMBERZONE" class="f_l"> 欢迎光临本店！&nbsp;&nbsp; <span
-					id="topLoginDiv" class="heaTopHighlight"
-					style="display:inline-block;"> <a href="user.php"
-						class="bgNone" target="_blank">登录</a><a
-						href="user.php?act=register" target="_blank" class="popHover">注册</a>
-				</span>
-				</font> &nbsp;&nbsp
-
-			</div>
-
-			<!--
-        <div class="f_r">
-        	 <a href="user.php?act=oath&type=qq"><img style="padding-top:3px;" src="static/public/images/frontImages/qq_login.gif"/> &nbsp;&nbsp
-        </div>
-      -->
-
-		</div>
-	</div>
 
 	<!-- 页面头部引用  begin -->
 	<jsp:include page="header.jsp" />
 	<!-- 页面头部引用 end -->
 
-	<div id="heaNav">
-		<div class="bd">
-			<p class="heaNavOnly">
-				<a href="catalog.php"> 所有课程分类</a>
-			</p>
-			<ul class="heaNavNone">
-				<li class="heaNav"><a href="http://www.itying.com/" class="cur">首页</a>
-				</li>
-				<li class="heaNav"><a href="category-1-b0.html" title="手机开发">手机开发</a>
-				</li>
-				<li class="heaNav"><a href="category-6-b0.html" title="网站开发">网站开发</a>
-				</li>
-				<li class="heaNav"><a href="category-12-b0.html" title="平面设计">平面设计</a>
-				</li>
-				<li class="heaNav"><a href="category-19-b0.html" title="数据库">数据库</a>
-				</li>
-				<li class="heaNav"><a href="category-28-b0.html" title="网络营销">网络营销</a>
-				</li>
-				<li class="heaNav"><a href="category-24-b0.html" title="IT新技术">IT新技术</a>
-				</li>
-				<li class="heaNav"><a href="category-41-b0.html"
-					title="html5教程">html5教程</a></li>
-			</ul>
-
-		</div>
-	</div>
+	
 
 
 	<div class="block clearfix">
