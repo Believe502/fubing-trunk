@@ -21,7 +21,7 @@
     <tx:annotation-driven />
     
     <!-- Default bean name is 'mongo' --> 
-    <mongo:mongo id="mongo" host="localhost" port="27017"/>
+    <mongo:mongo id="mongo" host="192.168.1.102" port="27017"/>
     
     <!-- Defines a MongoDbFactory for connecting to a specific database  -->
     <!-- by default "mongoDbFactory" -->
