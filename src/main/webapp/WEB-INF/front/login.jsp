@@ -9,6 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<base href="<%=basePath%>"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
@@ -17,11 +18,63 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="static/public/css/frontCss/style.css" rel="stylesheet"
-	type="text/css" />
+<link href="static/public/css/frontCss/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery.js"></script>
-<script type="text/javascript"
-	src="/static/public/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
+<script type="text/javascript">
+		$().ready(function() {
+		    $("#formLogin").validate({
+		        rules: {
+		            password: {
+		                required: true
+		            },
+		            email: {
+		                required: true
+		            }
+		        },
+		        messages: {
+		            password: {
+		                required: "<font color='red'>&nbsp&nbsp密码必填</font>"
+		            },
+		            email: {
+		                required: "<font color='red'>&nbsp&nbspemail必填</font>"
+		               
+		            }
+		        },
+		        submitHandler:function() {
+		        	var url = "<%=basePath%>"+"submit/login.jhtml";
+					//定义一个数组,js的数组就是json串
+					var param={};
+					param.email=$("#email").val();
+					param.password=$("#password").val();
+			        $.ajax({
+			            type: "post",
+			            cache: false,
+			            dataType: "json",
+			            url: url,
+			            data: param,
+			            beforeSend: function(XMLHttpRequest){
+			                //do something before submit...
+			            },
+			            success: function(data, textStatus){
+			                //do something after submited...
+			                if(data.msg=="success"){
+			                	 window.location.href="<%=basePath%>";
+			                }else{
+			                	 alert(data.msg);
+			                }
+			            	
+			            },
+			            complete: function(data,XMLHttpRequest, textStatus){
+			                //alert(data.msg);
+			            }
+			        });
+	            }
+		    });
+			
+		});
+	
+</script>
 </head>
 <body>
 
@@ -44,31 +97,29 @@
 	<div class="usBox clearfix">
 		<div class="logtitle">用户登录</div>
 		<div class="usBox_1 f_l">
-			<form name="formLogin" action="user.php" method="post"
-				onSubmit="return userLogin()">
+			<form name="formLogin" id="formLogin" action="#" method="post" >
 				<table width="100%" border="0" align="left" cellpadding="3"
 					cellspacing="5">
 					<tr>
-						<td width="20%" align="right">用户名</td>
-						<td width="80%"><input name="username" type="text" size="25"
-							class="inputBg" /></td>
+						<td width="20%" align="right">邮箱</td>
+						<td width="80%">
+							<input name="email" id="email" type="text" size="25"class="inputBg" />
+						</td>
 					</tr>
 					<tr>
 						<td align="right">密码</td>
-						<td><input name="password" type="password" size="15"
-							class="inputBg" /></td>
+						<td><input name="password" id="password" type="password" size="15"class="inputBg" /></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td colspan="2" style="text-indent:140px;"><input
 							type="checkbox" value="1" name="remember" id="remember" /><label
 							for="remember">请保存我这次的登录信息。</label></td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td>&nbsp;</td>
-						<td align="left"><input type="hidden" name="act"
-							value="act_login" /> <input type="hidden" name="back_act"
-							value="user.php" /> <input type="submit" name="submit" value=""
-							class="us_Submit" /></td>
+						<td align="left">
+						 	<input type="submit" name="submit" value="" class="us_Submit" />
+						</td>
 					</tr>
 					<tr>
 						<td></td>

@@ -20,9 +20,9 @@
 
 			<font id="ECS_MEMBERZONE" class="f_l"> 欢迎光临本店！&nbsp;&nbsp; <span
 				id="topLoginDiv" class="heaTopHighlight"
-				style="display:inline-block;"> <a href="user.php"
+				style="display:inline-block;"> <a href="login.jhtml"
 					class="bgNone" target="_blank">登录</a><a
-					href="user.php?act=register" target="_blank" class="popHover">注册</a>
+					href="/register.jhtml" target="_blank" class="popHover">注册</a>
 			</span>
 			</font> &nbsp;&nbsp
 

@@ -1,5 +1,6 @@
 package cn.believeus.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -58,9 +59,12 @@ public class Tmedia extends TbaseEntity{
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	@Column(name="detail",length=1024)
 	public String getDetail() {
 		return detail;
 	}
+	
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
