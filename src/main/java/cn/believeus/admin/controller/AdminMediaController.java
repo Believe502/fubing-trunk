@@ -40,7 +40,7 @@ public class AdminMediaController {
 	private IService mysqlService;
 
 	/**
-	 * 新闻列表
+	 * 媒体列表
 	 * @return
 	 */
 	@RequiresPermissions("mediaDinamic:view")
@@ -51,7 +51,7 @@ public class AdminMediaController {
 		if (StringUtils.isEmpty(pageNumber)) {
 			pageNumber="1";
 		}
-		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),2);
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),10);
 		String hql="From Tmedia";
 		Page<?> page = ((MySQLService)mysqlService).findObjectList(hql, pageable);
 		request.setAttribute("page",page);
@@ -63,7 +63,7 @@ public class AdminMediaController {
 	}
 	
 	/**
-	 * 新闻添加
+	 * 媒体添加
 	 * @return
 	 */
 	@RequiresPermissions("mediaDinamic:create")
@@ -73,7 +73,7 @@ public class AdminMediaController {
 	}
 	
 	/**
-	 * 新闻保存
+	 * 媒体保存
 	 * @return
 	 * */
 	@RequiresPermissions("mediaDinamic:create")
@@ -115,20 +115,50 @@ public class AdminMediaController {
 		modelView.addObject("media", media);
 		return modelView;
 	}
+	/**
+	 * 媒体更新
+	 * @return
+	 * */
+	@RequiresPermissions("mediaDinamic:create")
+	@RequestMapping(value="/admin/media/update")
+	public String update(HttpServletRequest request,Tmedia media){
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		Map<String, MultipartFile> files = multipartRequest.getFileMap();
+		for (MultipartFile file : files.values()) {
+			InputStream inputStream;
+			try {
+				inputStream = file.getInputStream();
+				if(inputStream.available()==0){
+					break;
+				}
+				Assert.assertNotNull("upload file InputStream is null", inputStream);
+				String originName=file.getOriginalFilename();
+				String extention = originName.substring(originName.lastIndexOf(".") + 1);
+				log.debug("upload file stuffix:"+extention);
+				String storepath = mydfsTrackerServer.upload(inputStream, extention);
+				media.setImgpath(storepath);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		mysqlService.saveOrUpdate(media);
+		return "redirect:/admin/media/list.jhtml";
+	}
 	
 	/**
-	 * 新闻删除
+	 * 媒体删除
 	 * @return
 	 */
 	@RequiresPermissions("mediaDinamic:delete")
 	@RequestMapping(value="/admin/media/delete")
 	public @ResponseBody String delete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
+		mysqlService.delete(Tmedia.class, list);
 		return "{\"type\":\"success\"}";
 	}
 	
 	/**
-	 * 新闻置顶
+	 * 媒体置顶
 	 * @return
 	 */
 	@RequiresPermissions("mediaDinamic:update")
@@ -136,10 +166,5 @@ public class AdminMediaController {
 	public String mediaTop(Integer myNewId, HttpServletRequest request){
 		return "redirect:/admin/media/list.jhtml";
 	}
-	
-	@RequiresPermissions("mediaDinamic:update")
-	@RequestMapping(value="/admin/media/down")
-	public String downTop(Integer myNewId){
-		return "redirect:/admin/media/list.jhtml";
-	}
+
 }

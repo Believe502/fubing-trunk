@@ -1,11 +1,8 @@
 package cn.believeus.service;
 
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
-
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.dao.IBaseDao;
@@ -21,7 +18,6 @@ public class MySQLService implements IService{
 	public void saveOrUpdate(Object object) {
 		((MySQLDao)mysqlDao).saveOrUpdate(object);
 	}
-
 	
 	@Override
 	public void delete(Class<?> clazz, Integer id) {

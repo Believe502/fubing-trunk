@@ -35,5 +35,11 @@ public class Tuser extends TbaseEntity{
 	public void setCoins(Integer coins) {
 		this.coins = coins;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 }

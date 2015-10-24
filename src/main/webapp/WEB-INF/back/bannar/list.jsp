@@ -52,10 +52,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="checkbox" id="selectAll" />
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="id">缩略图</a>
+					<a href="javascript:;" class="sort" name="descr">描述</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">标题</a>
+					<a href="javascript:;" class="sort" name="id">缩略图</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="edittime">编辑时间</a>
@@ -64,41 +64,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="edittime">访问链接</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="edittime">描述</a>
-				</th>
-				<th>
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="media" items="${page.content}" varStatus="status">
+			<c:forEach var="bannar" items="${page.content}" varStatus="status">
 				<tr>
 					<td>
-						<input type="checkbox" name="ids" value="${media.id}" />
+						<input type="checkbox" name="ids" value="${bannar.id}" />
 					</td>
 					<td>
-						<img  src="/${media.imgpath}?w=50&h=50">
+						${bannar.descr}
 					</td>
 					<td>
-						${media.title}
+						<img  src="/${bannar.imgpath}?w=50&h=50">
 					</td>
 					<td>
-						${media.editTime}
+						${bannar.editTime}
 					</td>
 					<td>
-						${media.url}
+						${bannar.url}
 					</td>
 					<td>
-						${media.detail}
-					</td>
-					<td>
-						<a href="/admin/media/edit/${media.id}.jhtml">[修改]</a>
+						<a href="/admin/bannar/edit/${bannar.id}.jhtml">[修改]</a>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	<div>
-		<form action="/admin/media/list.jhtml" id="listForm">
+		<form action="/admin/bannar/list.jhtml" id="listForm">
 			<jsp:include page="../include/pagination.jsp" flush="true" />
 		</form>
 	</div>

@@ -1,4 +1,4 @@
-/* $Id : user.js 4865 2007-01-31 14:04:10Z paulgao $ */
+/*  user.js 4865 2015-10-21  wuhuanrong  */
 
 /* *
  * 修改会员信息
@@ -371,13 +371,14 @@ function is_registered( username )
         document.forms['formUser'].elements['Submit'].disabled = 'disabled';
         return false;
     }
-    Ajax.call( 'user.php?act=is_registered', 'username=' + username, registed_callback , 'GET', 'TEXT', true, true );
+    Ajax.call( 'is_registered.jhtml', 'username=' + username, registed_callback , 'GET', 'TEXT', true, true );
 }
 
 
 
 function registed_callback(result)
 {
+	alert(result);
   if ( result == "true" )
   {
     document.getElementById('username_notice').innerHTML = msg_can_rg;

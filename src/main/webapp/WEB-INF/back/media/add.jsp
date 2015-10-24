@@ -33,22 +33,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        $('textarea').valid();
 	    });
 	    
-	    var editor1 = new UE.ui.Editor();
-	    editor1.render('editor1');
-	    editor1.addListener('contentchange',function(){
-	        this.sync();
-	        $('#editor1').valid();
-	    });
-	
 		var $inputForm = $("#inputForm");
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
 				upload_img: "required",
-				content: "required",
-				entitle: "required",
-				encontent: "required",
+				coin: "required",
+				url: "required",
+				detail: "required",
 				type:"required"
 			}
 		});

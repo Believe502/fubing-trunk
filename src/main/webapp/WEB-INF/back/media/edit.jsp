@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>添加视频 - Powered By believeus</title>
+	<title>编辑视频 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -32,23 +32,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        this.sync();
 	        $('textarea').valid();
 	    });
-	    
-	    var editor1 = new UE.ui.Editor();
-	    editor1.render('editor1');
-	    editor1.addListener('contentchange',function(){
-	        this.sync();
-	        $('#editor1').valid();
-	    });
-	
+	    editor.addListener("ready", function () {
+	        // editor准备好之后才可以使用
+	    	editor.setContent("${media.detail}");
+	     });
+	    $("#type").val("${media.type}");
 		var $inputForm = $("#inputForm");
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				upload_img: "required",
-				content: "required",
-				entitle: "required",
-				encontent: "required",
+				coin: "required",
+				url: "required",
+				detail: "required",
 				type:"required"
 			}
 		});
@@ -60,16 +56,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加新闻
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑新闻
 	</div>
-	<form id="inputForm" action="/admin/media/save.jhtml" method="post" enctype="multipart/form-data">
+	<form id="inputForm" action="/admin/media/update.jhtml" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${media.id}">
+		<input type="hidden" name="imgpath" value="${media.imgpath}">
+		<input type="hidden" name="status" value="${media.status}">
+		<input type="hidden" name="createTime" value="${media.createTime}">
+		<input type="hidden" name="editTime" value="${media.editTime}">
 		<table class="input">
 			<tr>
 				<th>
 					视频分类:
 				</th>
 				<td>
-					<select name="type">
+					<select name="type" id="type">
 						<option value="">--请选择--</option>
 						<option value="0">最新动态</option>
 						<option value="1">媒体报道</option>
@@ -128,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					视频描述:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="detail" maxlength="10000" class="editor">${media.detail}</textarea>
+					<textarea id="editor" name="detail" maxlength="10000" class="editor"></textarea>
 				</td>
 			</tr>
 			<tr>

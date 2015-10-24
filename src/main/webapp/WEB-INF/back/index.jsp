@@ -22,8 +22,10 @@
 				        </shiro:hasPermission>
 				         
 				        <shiro:hasPermission name="bannar:view"> 
-						 {"menuname":"Bannar图管理","icon":"icon-users","url":"/admin/bannar/list.jhtml"}
+						 {"menuname":"Bannar图管理","icon":"icon-users","url":"/admin/bannar/list.jhtml"},
 						</shiro:hasPermission>
+						 {"menuname":"媒体分类管理","icon":"icon-users","url":"/admin/mcategory/list.jhtml"},
+						 {"menuname":"用户管理","icon":"icon-users","url":"/admin/user/list.jhtml"}
 					]
 			}
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",

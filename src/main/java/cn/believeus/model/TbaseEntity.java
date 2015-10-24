@@ -15,7 +15,7 @@ public class TbaseEntity implements Serializable,Lifecycle {
 	
 	private static final long serialVersionUID = -4017940130624140047L;
 	
-	private int id;
+	public int id;
 	public short status;
 	public long createTime;
 	public long editTime;

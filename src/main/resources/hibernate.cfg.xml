@@ -47,6 +47,7 @@
 		<mapping class="cn.believeus.model.Tmedia"/>
 		<mapping class="cn.believeus.model.Tuser"/>
 		<mapping class="cn.believeus.model.Tbannar"/>
+		<mapping class="cn.believeus.model.MediaCategory"/>
 	</session-factory>
 
 </hibernate-configuration>

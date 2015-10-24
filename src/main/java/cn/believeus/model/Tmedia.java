@@ -18,6 +18,9 @@ public class Tmedia extends TbaseEntity{
 	private String url;
 	/**视频描述*/
 	private String detail;
+	/**分类类型*/
+	private Integer type;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -47,6 +50,12 @@ public class Tmedia extends TbaseEntity{
 	}
 	public void setDetail(String detail) {
 		this.detail = detail;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
 	}
 	
 }
