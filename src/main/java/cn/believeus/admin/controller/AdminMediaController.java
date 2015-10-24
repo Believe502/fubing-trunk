@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
+import cn.believeus.model.MediaCategory;
 import cn.believeus.model.Tmedia;
 import cn.believeus.service.IService;
 import cn.believeus.service.MySQLService;
@@ -52,7 +53,8 @@ public class AdminMediaController {
 			pageNumber="1";
 		}
 		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),10);
-		String hql="From Tmedia";
+		String hql="SELECT new Tmedia(t.id,t.imgpath,t.title,t.editTime,t.coin,CONCAT(c2.categoryName,' --> ',c1.categoryName) as type) From Tmedia t,MediaCategory c1,MediaCategory c2 where t.type=c1.id and c1.parentId=c2.id";
+		//String hql="From Tmedia";
 		Page<?> page = ((MySQLService)mysqlService).findObjectList(hql, pageable);
 		request.setAttribute("page",page);
 		request.setAttribute("size",page.getTotal());
@@ -112,7 +114,9 @@ public class AdminMediaController {
 	public ModelAndView edit(@PathVariable(value="id") Integer id){
 		ModelAndView modelView=new ModelAndView("/WEB-INF/back/media/edit.jsp");
 		Tmedia media = (Tmedia) ((MySQLService)mysqlService).findObject(Tmedia.class, id);
+		MediaCategory mCategory = (MediaCategory) ((MySQLService)mysqlService).findObject(MediaCategory.class, Integer.valueOf(media.getType()));
 		modelView.addObject("media", media);
+		modelView.addObject("mediaCategoryParentId", mCategory.getParentId());
 		return modelView;
 	}
 	/**

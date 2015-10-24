@@ -12,12 +12,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
+	<link href="/static/public/css/easyui.css" rel="stylesheet" type="text/css" />
+	<link href="/static/public/css/icon.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/static/public/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.config.js"></script>
 	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.all.js"></script>
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
+	<script type="text/javascript" src="/static/public/js/jquery.easyui.min.js"></script>
 	<style type="text/css">
 		table.input th {
 		    font-size: 13px;
@@ -37,6 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		// 表单验证
 		$inputForm.validate({
 			rules: {
+				parentCate:"required",
+				type:"required",
 				title: "required",
 				upload_img: "required",
 				coin: "required",
@@ -62,14 +67,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					视频分类:
 				</th>
 				<td>
-					<select name="type">
-						<option value="">--请选择--</option>
-						<option value="0">最新动态</option>
-						<option value="1">媒体报道</option>
-						<option value="2">常见问题</option>
-					</select>
+					<input id="parentCate" name="parentCate" class="easyui-combobox" data-options="
+						required:true,
+						missingMessage:'不能为空',
+				        valueField: 'id',
+				        textField: 'categoryName',
+				        url: '/admin/mcategory/categoryTree.jhtml?parentId=1',
+				        onSelect: function(rec){
+				        	$('#type').combobox('setValue', '--请选择--');
+					    	var url = '/admin/mcategory/categoryTree.jhtml?parentId='+rec.id;
+					    	$('#type').combobox('reload', url);
+					    } 
+					">
+					<input id="type" name="type" class="easyui-combobox" data-options="
+						required:true,
+						missingMessage:'不能为空',
+				        valueField: 'id',
+				        textField: 'categoryName',
+				        value:'--请选择--'
+				    ">
 				</td>
-			</tr>
+				
 			<tr>
 				<th>
 					视频名称:

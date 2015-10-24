@@ -61,10 +61,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="edittime">编辑时间</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="edittime">访问链接</a>
+					<a href="javascript:;" class="sort" name="edittime">下载积分</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="edittime">描述</a>
+					<a href="javascript:;" class="sort" name="edittime">分类</a>
 				</th>
 				<th>
 					<a href="#"  class="sort">操作</a>
@@ -85,10 +85,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						${media.editTime}
 					</td>
 					<td>
-						${media.url}
+						${media.coin}
 					</td>
 					<td>
-						${media.detail}
+						${media.type}
 					</td>
 					<td>
 						<a href="/admin/media/edit/${media.id}.jhtml">[修改]</a>

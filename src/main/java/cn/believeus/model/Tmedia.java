@@ -19,8 +19,21 @@ public class Tmedia extends TbaseEntity{
 	/**视频描述*/
 	private String detail;
 	/**分类类型*/
-	private Integer type;
+	private String type;
 	
+	public Tmedia(){
+		super();
+	}
+	
+	public Tmedia(Integer id,String imgpath,String title,Long editTime,Integer coin,String type){
+		this.id=id;
+		this.imgpath=imgpath;
+		this.title=title;
+		this.editTime=editTime;
+		this.coin=coin;
+		this.type=type;
+		
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -51,10 +64,10 @@ public class Tmedia extends TbaseEntity{
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	

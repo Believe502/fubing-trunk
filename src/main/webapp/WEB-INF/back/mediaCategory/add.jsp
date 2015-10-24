@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						missingMessage:'不能为空',
 				        valueField: 'id',
 				        textField: 'categoryName',
-				        url: '/admin/mcategory/categoryTree.jhtml'
+				        url: '/admin/mcategory/categoryTree.jhtml?parentId=1'
 				        ">
 				</td>
 			</tr>

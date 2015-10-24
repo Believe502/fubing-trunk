@@ -74,9 +74,9 @@ public class AdminMediaCategoryController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/categoryTree", produces = "text/html;charset=UTF-8")
-	public  String categoryTree(){
-		List<?> list = ((MySQLService)mysqlService).findObjectList(MediaCategory.class, "parentId","1");
-		JSONArray fromObject = JSONArray.fromObject(list);
+	public  String categoryTree(String parentId){
+		List<Map<String,Object>> categoryTree = batisService.findMediaCategoryTree(parentId);
+		JSONArray fromObject = JSONArray.fromObject(categoryTree);
 		return fromObject.toString();
 	}
 	

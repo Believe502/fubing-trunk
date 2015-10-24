@@ -14,4 +14,8 @@
     		limit #{pageStart},#{pageSize}
     	</if>
     </select>
+     <select id="findMediaCategoryTree" resultType="Map">
+    	select c1.id,c1.categoryName from mediacategory c1
+    		where c1.parentId=#{parentId}
+    </select>
 </mapper>  

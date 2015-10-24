@@ -10,115 +10,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>IT营_IT自学网IT免费视频教程资源下载学习网</title>
+<title>阿修罗_IT自学网免费视频教程资源下载学习网</title>
 <meta name="Keywords"
-	content="IT,IT营,IT自学网,it学习网,IT教程,我要自学网,App开发免费视频教程下载,html5免费视频教程下载,android免费视频教程下载,ios免费视频教程下载,我要自学网视频教程,it免费课程,IT免费教程" />
+	content="阿修罗,IT,免费,IT自学网,it学习网,IT教程,我要自学网,App开发免费视频教程下载,html5免费视频教程下载,android免费视频教程下载,ios免费视频教程下载,我要自学网视频教程,it免费课程,IT免费教程" />
 <meta name="Description"
-	content="IT营(itying.com)是一家IT免费视频教程下载资源的IT自学网,也是很多IT人员自学的专业网站，是国内资源最多的IT自学教程网，为大家提供网站开发视频教程，App手机应用开发免费视频教程,html5免费视频教程,android免费视频教程,ios免费视频教程等4000G的IT资源下载,是自学者的IT训练营" />
+	content="阿修罗(www.believeus.cn)是一家IT视频教程下载资源的IT自学网,也是很多IT人员自学的专业网站，是国内资源最多的IT自学教程网，为大家提供网站开发视频教程，App手机应用开发免费视频教程,html5免费视频教程,android免费视频教程,ios免费视频教程等4000G的IT资源下载,是自学者的IT训练营" />
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="static/public/css/frontCss/style.css" rel="stylesheet"
-	type="text/css" />
-<link rel="alternate" type="application/rss+xml" title="RSS|IT营"
-	href="feed.xml" />
+<link href="static/public/css/frontCss/style.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="alternate" type="application/rss+xml" title="RSS|IT营" href="feed.xml" /> -->
 <script type="text/javascript" src="static/public/js/frontJs/common.js"></script>
 <script type="text/javascript" src="static/public/js/frontJs/index.js"></script>
-</head>
-<body class="index_page">
-
-	<!-- 页面头部引用  begin -->
-	<jsp:include page="header.jsp" />
-	<!-- 页面头部引用 end -->
-
-
-	<div class="block clearfix">
-		<div class="index_top">
-			<div class="AreaL">
-				<ul class="cls_course clearfix">
-
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="category-1-b0.html">></a></span><a
-								href="category-1-b0.html">手机App开发教程</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label><a href="category-4-b0.html">android教程</a></label><label><a
-								href="category-5-b0.html">ios教程</a></label> <label><a
-								href="category-3-b0.html">phonegap教程</a></label><label><a
-								href="category-2-b0.html">wp教程</a></label>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="category-24-b0.html">></a></span><a
-								href="category-24-b0.html">新技术</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label class="cl3"><a href="category-25-b0.html">大数据</a></label>
-							<label class="cl3"><a href="category-27-b0.html">物联网</a></label>
-							<label class="cl3"><a href="category-26-b0.html">云计算</a></label>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="#">></a></span><a
-								href="category-6-b0.html">网站开发教程</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label><a href="category-8-b0.html">php教程</a></label> <label><a
-								href="category-9-b0.html">java教程</a></label> <label><a
-								href="category-11-b0.html">.net教程</a></label> <label><a
-								href="category-7-b0.html">node.js教程</a></label>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="#">></a></span><a
-								href="category-12-b0.html">平面设计教程</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label><a href="category-18-b0.html">ui系列教程</a></label> <label><a
-								href="category-17-b0.html">photoshop教程 </a></label> <label><a
-								href="category-13-b0.html">fireworks教程</a></label> <label><a
-								href="category-16-b0.html">InDesign教程</a></label>
-						</div>
-					</li>
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="#">></a></span><a
-								href="category-28-b0.html">网络营销教程</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label><a href="category-29-b0.html">SEO视频</a></label> <label><a
-								href="category-35-b0.html">微信营销</a></label> <label><a
-								href="category-31-b0.html">淘宝店铺装修</a></label> <label><a
-								href="category-33-b0.html">网赚教程</a></label>
-						</div>
-					</li>
-
-
-					<li class="clearfix">
-						<div class="course_title">
-							<span class="more"><a href="#">></a></span><a href="#">其他</a>
-						</div>
-						<div class="course_title_sub clearfix">
-							<label><a href="category-19-b0.html">数据库教程</a></label> <label><a
-								href="category-134-b0.html">Hadoop</a></label> <label><a
-								href="category-134-b0.html">web前端</a></label> <label><a
-								href="category-134-b0.html">linux教程</a></label>
-						</div>
-					</li>
-
-
-				</ul>
-			</div>
-
-			<div class="AreaR">
-				<div class="AreaR_left">
-
-					<style type="text/css">
+<style type="text/css">
 .container,.container * {
 	margin: 0;
 	padding: 0;
@@ -188,32 +92,7 @@
 	font-weight: bold;
 }
 </style>
-					<div class="container" id="idTransformView">
-						<ul class="slider" id="idSlider">
-							<li><a href="http://www.phonegap100.com" target="_blank"><img
-									src="static/public/images/frontImages/20150109kfjxlx.png" /></a></li>
-							<li><a href="http://www.itying.com/category-41-b0.html"
-								target="_blank"><img
-									src="static/public/images/frontImages/20141221ngtorq.png" /></a></li>
-							<li><a href="http://www.itying.com/category-12-b0.html"
-								target="_blank"><img
-									src="static/public/images/frontImages/20141221pnryhm.png" /></a></li>
-							<li><a href="http://www.itying.com/category-11-b0.html"
-								target="_blank"><img
-									src="static/public/images/frontImages/20141221ecybwv.png" /></a></li>
-
-						</ul>
-						<ul class="num" id="idNum">
-
-
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-							<li>4</li>
-
-						</ul>
-					</div>
-					<script type="text/javascript">
+<script type="text/javascript">
 						var $ = function(id) {
 							return "string" == typeof id ? document
 									.getElementById(id) : id;
@@ -222,15 +101,15 @@
 							create : function() {
 								return function() {
 									this.initialize.apply(this, arguments);
-								}
+								};
 							}
-						}
+						};
 						Object.extend = function(destination, source) {
 							for ( var property in source) {
 								destination[property] = source[property];
 							}
 							return destination;
-						}
+						};
 						var TransformView = Class.create();
 						TransformView.prototype = {
 							//容器对象,滑动对象,切换参数,切换数量
@@ -459,8 +338,113 @@
 
 						}
 					</script>
+</head>
+<body class="index_page">
+	<!-- 页面头部引用  begin -->
+	<jsp:include page="header.jsp" />
+	<!-- 页面头部引用 end -->
+	<div class="block clearfix">
+		<div class="index_top">
+			<div class="AreaL">
+				<ul class="cls_course clearfix">
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="category-1-b0.html">></a></span><a
+								href="category-1-b0.html">手机App开发教程</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label><a href="category-4-b0.html">android教程</a></label><label><a
+								href="category-5-b0.html">ios教程</a></label> <label><a
+								href="category-3-b0.html">phonegap教程</a></label><label><a
+								href="category-2-b0.html">wp教程</a></label>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="category-24-b0.html">></a></span><a
+								href="category-24-b0.html">新技术</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label class="cl3"><a href="category-25-b0.html">大数据</a></label>
+							<label class="cl3"><a href="category-27-b0.html">物联网</a></label>
+							<label class="cl3"><a href="category-26-b0.html">云计算</a></label>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="#">></a></span><a
+								href="category-6-b0.html">网站开发教程</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label><a href="category-8-b0.html">php教程</a></label> <label><a
+								href="category-9-b0.html">java教程</a></label> <label><a
+								href="category-11-b0.html">.net教程</a></label> <label><a
+								href="category-7-b0.html">node.js教程</a></label>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="#">></a></span><a
+								href="category-12-b0.html">平面设计教程</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label><a href="category-18-b0.html">ui系列教程</a></label> <label><a
+								href="category-17-b0.html">photoshop教程 </a></label> <label><a
+								href="category-13-b0.html">fireworks教程</a></label> <label><a
+								href="category-16-b0.html">InDesign教程</a></label>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="#">></a></span><a
+								href="category-28-b0.html">网络营销教程</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label><a href="category-29-b0.html">SEO视频</a></label> <label><a
+								href="category-35-b0.html">微信营销</a></label> <label><a
+								href="category-31-b0.html">淘宝店铺装修</a></label> <label><a
+								href="category-33-b0.html">网赚教程</a></label>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="course_title">
+							<span class="more"><a href="#">></a></span><a href="#">其他</a>
+						</div>
+						<div class="course_title_sub clearfix">
+							<label><a href="category-19-b0.html">数据库教程</a></label> <label><a
+								href="category-134-b0.html">Hadoop</a></label> <label><a
+								href="category-134-b0.html">web前端</a></label> <label><a
+								href="category-134-b0.html">linux教程</a></label>
+						</div>
+					</li>
+				</ul>
+			</div>
 
+			<div class="AreaR">
+				<div class="AreaR_left">
+					
+					<div class="container" id="idTransformView">
+						<ul class="slider" id="idSlider">
+							<li><a href="http://www.phonegap100.com" target="_blank"><img
+									src="static/public/images/frontImages/20150109kfjxlx.png" /></a></li>
+							<li><a href="http://www.itying.com/category-41-b0.html"
+								target="_blank"><img
+									src="static/public/images/frontImages/20141221ngtorq.png" /></a></li>
+							<li><a href="http://www.itying.com/category-12-b0.html"
+								target="_blank"><img
+									src="static/public/images/frontImages/20141221pnryhm.png" /></a></li>
+							<li><a href="http://www.itying.com/category-11-b0.html"
+								target="_blank"><img
+									src="static/public/images/frontImages/20141221ecybwv.png" /></a></li>
 
+						</ul>
+						<ul class="num" id="idNum">
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+					</div>
 					<div class="blank"></div>
 					<div class="index_rec">
 						<ul>
