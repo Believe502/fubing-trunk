@@ -22,9 +22,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import cn.believeus.service.IService;
 
 @Controller
-public class NewsController {
+public class AdminNewsController {
 	
-	private static final Log log=LogFactory.getLog(NewsController.class);
+	private static final Log log=LogFactory.getLog(AdminNewsController.class);
 	
 	@Resource
 	private MydfsTrackerServer mydfsTrackerServer;
